@@ -175,12 +175,11 @@ function getTestResult() {
 
   for (const result of testResults) {
     if (randomNumber < result.weight) {
-      const feedback =
-        result.feedback[Math.floor(Math.random() * result.feedback.length)];
+      const randomIndex = Math.floor(Math.random() * result.feedback.length);
 
       return {
         status: result.status,
-        feedback: feedback,
+        feedback: result.feedback[randomIndex],
       };
     }
 
@@ -245,6 +244,7 @@ function showMessage(element, text, type, icon) {
     const iconElement = document.createElement("i");
 
     iconElement.className = "fa-solid " + icon;
+
     element.prepend(iconElement);
   }
 
@@ -265,6 +265,7 @@ function checkPasswordsMatch(password, confirmPassword, message) {
 
 function getAssignmentId() {
   const params = new URLSearchParams(window.location.search);
+
   const id = params.get("assignment");
 
   return assignments[id] ? id : "zoo1a";
@@ -346,6 +347,7 @@ function setupLoginPage() {
   }
 
   const message = document.getElementById("login-message");
+
   const params = new URLSearchParams(window.location.search);
 
   if (params.get("created") === "yes") {
@@ -367,7 +369,9 @@ function setupCreateAccountPage() {
   }
 
   const password = document.getElementById("password");
+
   const confirmPassword = document.getElementById("confirm-password");
+
   const message = document.getElementById("create-message");
 
   form.addEventListener("submit", function (event) {
@@ -415,6 +419,7 @@ function setupAssignmentsPage() {
   const rows = document.querySelectorAll("#assignment-rows tr[data-course]");
 
   const emptyRow = document.getElementById("no-assignments");
+
   const count = document.getElementById("assignment-count");
 
   function showAssignments() {
@@ -432,13 +437,17 @@ function setupAssignmentsPage() {
 
     emptyRow.hidden = visibleCount > 0;
 
-    count.textContent =
-      visibleCount === 1 ? "1 Assignment" : visibleCount + " Assignments";
+    if (visibleCount === 1) {
+      count.textContent = "1 Assignment";
+    } else {
+      count.textContent = visibleCount + " Assignments";
+    }
   }
 
   function updateStatuses() {
     rows.forEach(function (row) {
       const link = row.querySelector(".assignment-link");
+
       const label = row.querySelector(".status-label");
 
       if (!link || !label) {
@@ -446,13 +455,21 @@ function setupAssignmentsPage() {
       }
 
       const params = new URLSearchParams(link.search);
+
       const id = params.get("assignment");
 
       if (!assignments[id]) {
         return;
       }
 
-      const latestAttempt = getAttempts(id)[0];
+      const attempts = getAttempts(id);
+
+      if (attempts.length === 0) {
+        return;
+      }
+
+      const latestAttempt = attempts[0];
+
       const info = statuses[latestAttempt.status];
 
       label.innerHTML = `
@@ -480,8 +497,11 @@ function setupAttemptsPage() {
   }
 
   const id = getAssignmentId();
+
   const assignment = assignments[id];
+
   const attempts = getAttempts(id);
+
   const latest = attempts[0];
 
   document.title = "Feedback System - " + assignment.name + " Attempts";
@@ -503,10 +523,14 @@ function setupAttemptsPage() {
 
   attempts.forEach(function (attempt, index) {
     const number = attempts.length - index;
+
     const info = statuses[attempt.status];
 
     html += `
-      <article class="attempt-item" id="attempt-${number}">
+      <article
+        class="attempt-item"
+        id="attempt-${number}"
+      >
 
         <div class="attempt-header">
 
@@ -566,10 +590,12 @@ function setupAttemptsPage() {
   copyButtons.forEach(function (button) {
     button.addEventListener("click", function () {
       const pageUrl = window.location.href.split("#")[0];
+
       const link = pageUrl + "#attempt-" + button.dataset.attempt;
 
       if (!navigator.clipboard) {
         flashButtonText(button, "Copy Failed");
+
         return;
       }
 
@@ -642,7 +668,9 @@ function uploadFile(onProgress) {
 
     function failUpload() {
       clearInterval(timer);
+
       window.removeEventListener("offline", failUpload);
+
       reject(new Error("offline"));
     }
 
@@ -660,6 +688,7 @@ function uploadFile(onProgress) {
 
       if (percent >= 100) {
         clearInterval(timer);
+
         window.removeEventListener("offline", failUpload);
 
         setTimeout(resolve, 300);
@@ -687,7 +716,9 @@ function setupUploadPage() {
   }
 
   const id = getAssignmentId();
+
   const assignment = assignments[id];
+
   const attemptsPage = "attempts.html?assignment=" + id;
 
   const fileInput = document.getElementById("assignment-file");
@@ -729,6 +760,7 @@ function setupUploadPage() {
 
   function setProgress(percent) {
     progressFill.style.width = percent + "%";
+
     progressPercent.textContent = percent + "%";
   }
 
@@ -796,6 +828,7 @@ function setupUploadPage() {
       '<i class="fa-solid fa-spinner fa-spin"></i> Uploading...';
 
     setProgress(0);
+
     progress.hidden = false;
 
     progressText.textContent = "Uploading " + file.name + "...";
@@ -828,6 +861,7 @@ function setupUploadPage() {
           }),
 
           file: file.name,
+
           feedback: feedback.feedback,
         };
 
@@ -849,6 +883,7 @@ function setupUploadPage() {
         submitButton.innerHTML = originalButton;
 
         form.reset();
+
         selectedFile.hidden = true;
 
         cancelLink.style.display = "none";
@@ -909,7 +944,13 @@ function setupAccountSettingsPage() {
   passwordForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    if (checkPasswordsMatch(newPassword, confirmPassword, passwordMessage)) {
+    const passwordsMatch = checkPasswordsMatch(
+      newPassword,
+      confirmPassword,
+      passwordMessage,
+    );
+
+    if (passwordsMatch) {
       passwordForm.reset();
 
       showMessage(passwordMessage, "Your password was updated.", "success");
