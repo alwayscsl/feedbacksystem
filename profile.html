@@ -21,35 +21,35 @@
       <div class="logo">Feedback System</div>
     </header>
 
-    <!-- Application Layout -->
+    <!-- Main Layout -->
     <div class="app-layout">
       <!-- Sidebar -->
       <aside class="sidebar">
-        <nav class="nav-menu" aria-label="Main navigation">
+        <nav class="nav-menu">
           <a href="assignments.html" class="nav-item">
-            <i class="fa-regular fa-clipboard" aria-hidden="true"></i>
+            <i class="fa-regular fa-clipboard"></i>
             <span>Assignments</span>
           </a>
 
-          <a href="profile.html" class="nav-item active" aria-current="page">
-            <i class="fa-regular fa-user" aria-hidden="true"></i>
+          <a href="profile.html" class="nav-item active">
+            <i class="fa-regular fa-user"></i>
             <span>Profile</span>
           </a>
 
           <a href="account-settings.html" class="nav-item">
-            <i class="fa-solid fa-gear" aria-hidden="true"></i>
+            <i class="fa-solid fa-gear"></i>
             <span>Settings</span>
           </a>
 
           <a href="help.html" class="nav-item">
-            <i class="fa-regular fa-circle-question" aria-hidden="true"></i>
+            <i class="fa-regular fa-circle-question"></i>
             <span>Help</span>
           </a>
         </nav>
 
         <div class="sidebar-bottom">
           <a href="index.html" class="nav-item">
-            <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>
+            <i class="fa-solid fa-right-from-bracket"></i>
             <span>Logout</span>
           </a>
         </div>
@@ -58,6 +58,7 @@
       <!-- Main Content -->
       <main class="main-content">
         <div class="content">
+          <!-- Page Heading -->
           <div class="page-heading">
             <div>
               <h1>Profile</h1>
@@ -76,60 +77,70 @@
               <p>Student ID: 12345678</p>
 
               <span class="badge badge-info">
-                <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                <i class="fa-solid fa-graduation-cap"></i>
                 Object Oriented Programming
               </span>
             </div>
           </section>
 
-          <!-- Notifications (newest first) -->
+          <!-- Notifications -->
           <section class="card">
             <h2>Notifications</h2>
 
             <div class="notification-item">
               <div class="icon-box icon-box-round">
-                <i class="fa-solid fa-bell" aria-hidden="true"></i>
+                <i class="fa-solid fa-bell"></i>
               </div>
 
               <div class="notification-info">
                 <strong>Course reminder</strong>
                 <p>Zoo assignments are due September 30, 2026.</p>
-                <span class="notification-time">September 28, 2026</span>
+                <span class="notification-time"> September 28, 2026 </span>
               </div>
             </div>
 
             <div class="notification-item">
               <div class="icon-box icon-box-round icon-box-warning">
-                <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
               </div>
 
               <div class="notification-info">
                 <strong>
-                  <a href="attempts.html?assignment=zoo1a" class="notification-link">
+                  <a
+                    href="attempts.html?assignment=zoo1a"
+                    class="notification-link"
+                  >
                     Zoo 1A needs attention
                   </a>
                 </strong>
+
                 <p>
-                  Your latest submission contains an error. Review your
-                  feedback and resubmit the assignment.
+                  Your latest submission contains an error. Review your feedback
+                  and resubmit the assignment.
                 </p>
-                <span class="notification-time">September 14, 2026</span>
+
+                <span class="notification-time"> September 14, 2026 </span>
               </div>
             </div>
 
             <div class="notification-item">
               <div class="icon-box icon-box-round">
-                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <i class="fa-solid fa-circle-check"></i>
               </div>
 
               <div class="notification-info">
                 <strong>
-                  <a href="attempts.html?assignment=zoo1b" class="notification-link">
+                  <a
+                    href="attempts.html?assignment=zoo1b"
+                    class="notification-link"
+                  >
                     Zoo 1B was submitted
                   </a>
                 </strong>
+
                 <p>Your submission was received with no errors.</p>
-                <span class="notification-time">September 13, 2026</span>
+
+                <span class="notification-time"> September 13, 2026 </span>
               </div>
             </div>
           </section>
@@ -141,14 +152,7 @@
               <span class="completion-percent">75%</span>
             </div>
 
-            <div
-              class="progress-bar"
-              role="progressbar"
-              aria-label="Course completion"
-              aria-valuenow="75"
-              aria-valuemin="0"
-              aria-valuemax="100"
-            >
+            <div class="progress-bar">
               <div class="progress-fill" style="width: 75%"></div>
             </div>
 

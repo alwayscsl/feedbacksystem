@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -17,12 +18,12 @@
 
     <!-- Login -->
     <main class="login-container">
-      <!-- Image (decorative) -->
+      <!-- Image -->
       <div class="image-section">
         <img src="desk_girl1.png" alt="" />
       </div>
 
-      <!-- Form Section -->
+      <!-- Form -->
       <section class="login-section">
         <div class="login-content">
           <div class="welcome-header">
@@ -34,33 +35,31 @@
             <form id="login-form" action="assignments.html" method="post">
               <div class="form-group">
                 <label for="email">Email</label>
-
                 <input
                   type="email"
                   id="email"
                   name="email"
                   placeholder="Enter your email"
-                  autocomplete="email"
                   required
                 />
               </div>
 
               <div class="form-group">
                 <label for="password">Password</label>
-
                 <input
                   type="password"
                   id="password"
                   name="password"
                   placeholder="Enter your password"
-                  autocomplete="current-password"
                   required
                 />
               </div>
 
-              <button type="submit" class="btn btn-primary btn-block">Log In</button>
+              <button type="submit" class="btn btn-primary btn-block">
+                Log In
+              </button>
 
-              <p id="login-message" class="form-message" role="status" hidden></p>
+              <p id="login-message" class="form-message" hidden></p>
 
               <div class="form-link">
                 <a href="forgot-password.html">Forgot password?</a>

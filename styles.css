@@ -1,22 +1,5 @@
 /* =========================================================
    FEEDBACK SYSTEM - STYLES
-   ---------------------------------------------------------
-   1.  Variables
-   2.  Base
-   3.  Header & Footer
-   4.  App Layout & Sidebar
-   5.  Page Heading & Links
-   6.  Cards
-   7.  Buttons
-   8.  Forms
-   9.  Badges, Status, Icon Boxes & Callouts
-   10. Login Pages (login, create account, forgot password)
-   11. Assignments Page
-   12. Attempts Page
-   13. Upload Page
-   14. Profile Page
-   15. Help Page
-   16. Responsive
    ========================================================= */
 
 
@@ -25,28 +8,23 @@
    ========================================================= */
 
 :root {
-  /* Brand */
   --blue: #0056b3;
   --blue-dark: #004494;
   --blue-light: #ddedff;
 
-  /* Neutrals */
-  --background: #F2F2F2;
+  --background: #f2f2f2;
   --white: #ffffff;
-  --surface: #f8fafc; /* light panels inside cards */
+  --surface: #f8fafc;
   --hover: #e9eef3;
 
-  /* Text */
   --text-dark: #1a1a1a;
   --text: #333333;
   --text-muted: #4a5568;
   --muted: #5f6b7a;
 
-  /* Borders */
   --border: #dfe5eb;
   --border-dark: #718096;
 
-  /* Status (darkened slightly to pass color contrast) */
   --success: #1e7b34;
   --success-light: #e4f5e8;
   --warning: #8a5a00;
@@ -54,10 +32,10 @@
   --danger: #c82333;
   --danger-light: #fde8ea;
 
-  /* Shared values */
-  --radius-sm: 6px;  /* buttons, messages */
-  --radius: 8px;     /* inputs, boxes inside cards */
-  --radius-lg: 10px; /* cards */
+  --radius-sm: 6px;
+  --radius: 8px;
+  --radius-lg: 10px;
+
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   --focus: 0 0 0 3px rgba(0, 86, 179, 0.2);
 }
@@ -107,7 +85,6 @@ select {
   font: inherit;
 }
 
-/* One focus style for every link and button (keyboard users) */
 a:focus-visible,
 button:focus-visible {
   outline: 3px solid rgba(0, 86, 179, 0.35);
@@ -202,7 +179,6 @@ button:focus-visible {
   padding: 32px 40px;
 }
 
-/* Keeps every page the same readable width */
 .content {
   width: 100%;
   max-width: 960px;
@@ -214,7 +190,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   5. PAGE HEADING & LINKS
+   5. PAGE HEADINGS & LINKS
    ========================================================= */
 
 .page-heading {
@@ -245,7 +221,6 @@ button:focus-visible {
   font-size: 0.875rem;
 }
 
-/* Bold blue text links that underline on hover */
 .back-link,
 .form-link a,
 .assignment-link,
@@ -282,7 +257,6 @@ button:focus-visible {
   font-weight: 700;
 }
 
-/* Card with no padding (content goes edge to edge, like tables) */
 .card-flush {
   padding: 0;
   overflow: hidden;
@@ -357,6 +331,12 @@ button:focus-visible {
   gap: 8px;
 }
 
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 
 /* =========================================================
    8. FORMS
@@ -400,28 +380,24 @@ button:focus-visible {
   box-shadow: var(--focus);
 }
 
-/* Centered link under a form ("Forgot password?", "Back to Login") */
 .form-link {
   margin-top: 16px;
   text-align: center;
   font-size: 0.875rem;
 }
 
-/* Two fields side by side (First Name / Last Name) */
 .form-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0 16px;
 }
 
-/* Small helper text under an input */
 .form-hint {
   margin-top: 6px;
   color: var(--muted);
   font-size: 0.8rem;
 }
 
-/* Success / error message shown under the submit button */
 .form-message {
   margin-top: 16px;
   padding: 12px 14px;
@@ -440,15 +416,20 @@ button:focus-visible {
   color: var(--danger);
 }
 
-/* Cancel / Submit buttons at the bottom of a form */
+.form-message i {
+  margin-right: 8px;
+}
+
+.page-message {
+  margin: 0 0 20px;
+}
+
 .form-actions {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
   margin-top: 24px;
 }
-
-/* Course dropdown */
 
 .select-wrapper {
   position: relative;
@@ -473,7 +454,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   9. BADGES, STATUS, ICON BOXES & CALLOUTS
+   9. BADGES, STATUS & CALLOUTS
    ========================================================= */
 
 .badge {
@@ -507,7 +488,11 @@ button:focus-visible {
   color: var(--danger);
 }
 
-/* Icon + text, used in tables and the status guide */
+.badge-muted {
+  background-color: var(--hover);
+  color: var(--text-muted);
+}
+
 .status-label {
   display: inline-flex;
   align-items: center;
@@ -530,7 +515,6 @@ button:focus-visible {
   color: var(--muted);
 }
 
-/* Square icon tile (notifications, help cards, profile actions) */
 .icon-box {
   display: flex;
   align-items: center;
@@ -552,7 +536,6 @@ button:focus-visible {
   color: var(--warning);
 }
 
-/* Callout boxes (info / warning / success) */
 .callout {
   display: flex;
   align-items: flex-start;
@@ -602,23 +585,18 @@ button:focus-visible {
    10. LOGIN PAGES
    ========================================================= */
 
-/* Login pages are exactly one screen tall, so the image is the same
-   size on every page. A long form (Create Account) scrolls in its
-   own column instead of stretching the image. */
 .login-page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  height: 100vh;
 }
 
 .login-container {
   flex: 1;
-  min-height: 0;
   display: flex;
+  min-height: 0;
 }
 
 .image-section {
-  flex: 0 0 55%;
+  width: 50%;
   overflow: hidden;
   background-color: var(--hover);
 }
@@ -631,18 +609,16 @@ button:focus-visible {
 }
 
 .login-section {
-  flex: 1;
+  width: 50%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 48px 56px;
+  padding: 40px;
   overflow-y: auto;
 }
 
 .login-content {
   width: 100%;
-  max-width: 440px;
-  margin: 0 auto;
+  max-width: 420px;
+  margin: auto;
 }
 
 .welcome-header {
@@ -684,8 +660,6 @@ button:focus-visible {
    11. ASSIGNMENTS PAGE
    ========================================================= */
 
-/* Important information */
-
 .info-card {
   border-left: 4px solid var(--blue);
 }
@@ -712,8 +686,6 @@ button:focus-visible {
   margin-bottom: 0;
 }
 
-/* Status guide */
-
 .legend-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -726,8 +698,6 @@ button:focus-visible {
   gap: 10px;
   font-size: 0.9rem;
 }
-
-/* Assignment table */
 
 .table-wrapper {
   overflow-x: auto;
@@ -765,23 +735,6 @@ button:focus-visible {
   background-color: var(--surface);
 }
 
-.col-name {
-  width: 30%;
-}
-
-.col-status {
-  width: 20%;
-}
-
-.col-date {
-  width: 22%;
-}
-
-.col-actions {
-  width: 28%;
-}
-
-/* Shown when a course has no assignments yet */
 .assignment-table .empty-row td {
   padding: 32px 16px;
   color: var(--text-muted);
@@ -792,8 +745,6 @@ button:focus-visible {
 /* =========================================================
    12. ATTEMPTS PAGE
    ========================================================= */
-
-/* Summary bar */
 
 .attempt-summary {
   display: flex;
@@ -822,8 +773,6 @@ button:focus-visible {
   height: 38px;
   background-color: var(--border);
 }
-
-/* Individual attempt */
 
 .attempt-item {
   padding: 24px;
@@ -858,8 +807,6 @@ button:focus-visible {
   color: var(--text-muted);
   font-size: 0.85rem;
 }
-
-/* Feedback (left border color matches the attempt status) */
 
 .feedback-block {
   margin-top: 16px;
@@ -904,6 +851,10 @@ button:focus-visible {
   color: var(--danger);
 }
 
+.feedback-none .feedback-heading i {
+  color: var(--muted);
+}
+
 .feedback-message {
   font-size: 0.9rem;
   line-height: 1.6;
@@ -913,7 +864,6 @@ button:focus-visible {
   color: var(--text-dark);
 }
 
-/* Name of the file that was submitted */
 .submitted-file {
   display: flex;
   align-items: center;
@@ -934,7 +884,6 @@ button:focus-visible {
   font-size: 0.95rem;
 }
 
-/* The real file input is hidden; the dashed box is its label */
 .file-input {
   position: absolute;
   width: 1px;
@@ -964,6 +913,12 @@ button:focus-visible {
   border-color: var(--blue);
 }
 
+.file-input:disabled + .upload-area {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .upload-area i {
   margin-bottom: 6px;
   color: var(--blue);
@@ -989,12 +944,44 @@ button:focus-visible {
   font-weight: 600;
 }
 
+.upload-progress {
+  margin-top: 16px;
+}
+
+.upload-progress-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.upload-progress .progress-fill {
+  transition: width 0.15s ease;
+}
+
+.submission-result {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.submission-result h2:focus {
+  outline: none;
+}
+
+.result-next {
+  margin-top: 12px;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
 
 /* =========================================================
    14. PROFILE PAGE
    ========================================================= */
-
-/* Profile header */
 
 .profile-header-card {
   display: flex;
@@ -1028,8 +1015,6 @@ button:focus-visible {
   color: var(--text-muted);
   font-size: 0.9rem;
 }
-
-/* Notifications */
 
 .notification-item {
   display: flex;
@@ -1067,8 +1052,6 @@ button:focus-visible {
   font-size: 0.75rem;
 }
 
-/* Course completion */
-
 .completion-header {
   display: flex;
   align-items: center;
@@ -1105,60 +1088,11 @@ button:focus-visible {
   font-size: 0.875rem;
 }
 
-/* Account settings links */
-
-.profile-actions {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-
-.profile-action {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 18px;
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  text-decoration: none;
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.profile-action:hover {
-  background-color: var(--surface);
-  border-color: var(--border-dark);
-}
-
-.profile-action-info {
-  flex: 1;
-}
-
-.profile-action-info strong {
-  display: block;
-  margin-bottom: 2px;
-  color: var(--text-dark);
-  font-size: 0.9rem;
-}
-
-.profile-action-info span {
-  color: var(--text-muted);
-  font-size: 0.8rem;
-}
-
-.profile-action-arrow {
-  color: var(--muted);
-  font-size: 0.75rem;
-}
-
 
 /* =========================================================
    15. HELP PAGE
    ========================================================= */
 
-/* Icon + title at the top of a card (also used on Account Settings) */
 .help-card-header {
   display: flex;
   align-items: flex-start;
@@ -1174,8 +1108,6 @@ button:focus-visible {
   color: var(--text-muted);
   font-size: 0.9rem;
 }
-
-/* Numbered steps */
 
 .help-steps {
   display: flex;
@@ -1222,8 +1154,6 @@ button:focus-visible {
   font-weight: 600;
 }
 
-/* Paragraph sections */
-
 .help-info > p {
   margin-bottom: 16px;
 }
@@ -1236,8 +1166,6 @@ button:focus-visible {
 /* =========================================================
    16. RESPONSIVE
    ========================================================= */
-
-/* Tablet / small laptop */
 
 @media (max-width: 900px) {
   .sidebar {
@@ -1257,17 +1185,12 @@ button:focus-visible {
     grid-template-columns: 1fr;
   }
 
-  /* Table scrolls sideways instead of squishing */
   .assignment-table {
     min-width: 640px;
   }
 }
 
-/* Mobile */
-
 @media (max-width: 700px) {
-  /* Header */
-
   .header-bar {
     padding: 12px 16px;
   }
@@ -1275,8 +1198,6 @@ button:focus-visible {
   .logo {
     font-size: 1.1rem;
   }
-
-  /* Login pages: image on top, form below, whole page scrolls */
 
   .login-page {
     height: auto;
@@ -1296,8 +1217,6 @@ button:focus-visible {
     padding: 32px 16px;
   }
 
-  /* Sidebar becomes a navigation bar across the top */
-
   .app-layout {
     flex-direction: column;
   }
@@ -1311,7 +1230,6 @@ button:focus-visible {
     border-bottom: 1px solid var(--border);
   }
 
-  /* 4 menu links + Logout, all the same width */
   .nav-menu {
     flex: 4;
     flex-direction: row;
@@ -1340,8 +1258,6 @@ button:focus-visible {
     font-size: 1.5rem;
   }
 
-  /* Cards */
-
   .card {
     padding: 20px;
   }
@@ -1357,8 +1273,6 @@ button:focus-visible {
   .select-wrapper {
     max-width: none;
   }
-
-  /* Attempts */
 
   .attempt-summary {
     flex-direction: column;
@@ -1383,8 +1297,6 @@ button:focus-visible {
     width: 100%;
   }
 
-  /* Forms: stack fields, main button on top for thumbs */
-
   .form-row {
     grid-template-columns: 1fr;
   }
@@ -1397,8 +1309,6 @@ button:focus-visible {
     width: 100%;
   }
 
-  /* Profile */
-
   .profile-header-card {
     flex-direction: column;
     align-items: flex-start;
@@ -1408,12 +1318,6 @@ button:focus-visible {
     width: 84px;
     height: 84px;
   }
-
-  .profile-actions {
-    grid-template-columns: 1fr;
-  }
-
-  /* Help */
 
   .help-card-header {
     gap: 12px;

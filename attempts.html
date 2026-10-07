@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -21,35 +22,35 @@
       <div class="logo">Feedback System</div>
     </header>
 
-    <!-- Application Layout -->
+    <!-- Main Layout -->
     <div class="app-layout">
       <!-- Sidebar -->
       <aside class="sidebar">
-        <nav class="nav-menu" aria-label="Main navigation">
+        <nav class="nav-menu">
           <a href="assignments.html" class="nav-item active">
-            <i class="fa-regular fa-clipboard" aria-hidden="true"></i>
+            <i class="fa-regular fa-clipboard"></i>
             <span>Assignments</span>
           </a>
 
           <a href="profile.html" class="nav-item">
-            <i class="fa-regular fa-user" aria-hidden="true"></i>
+            <i class="fa-regular fa-user"></i>
             <span>Profile</span>
           </a>
 
           <a href="account-settings.html" class="nav-item">
-            <i class="fa-solid fa-gear" aria-hidden="true"></i>
+            <i class="fa-solid fa-gear"></i>
             <span>Settings</span>
           </a>
 
           <a href="help.html" class="nav-item">
-            <i class="fa-regular fa-circle-question" aria-hidden="true"></i>
+            <i class="fa-regular fa-circle-question"></i>
             <span>Help</span>
           </a>
         </nav>
 
         <div class="sidebar-bottom">
           <a href="index.html" class="nav-item">
-            <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>
+            <i class="fa-solid fa-right-from-bracket"></i>
             <span>Logout</span>
           </a>
         </div>
@@ -58,11 +59,13 @@
       <!-- Main Content -->
       <main class="main-content">
         <div class="content">
+          <!-- Back Link -->
           <a href="assignments.html" class="back-link">
-            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            <i class="fa-solid fa-arrow-left"></i>
             Back to Assignments
           </a>
 
+          <!-- Page Heading -->
           <div class="page-heading">
             <div>
               <h1 id="assignment-title">Assignment</h1>
@@ -70,13 +73,16 @@
             </div>
 
             <a id="resubmit-link" href="upload.html" class="btn btn-primary">
-              <i class="fa-solid fa-upload" aria-hidden="true"></i>
+              <i class="fa-solid fa-upload"></i>
               Resubmit Assignment
             </a>
           </div>
 
-          <!-- Attempt Summary (filled in by script.js) -->
-          <section class="card attempt-summary" aria-label="Attempt summary">
+          <!-- Upload Message -->
+          <p id="attempts-message" class="form-message page-message" hidden></p>
+
+          <!-- Attempt Summary -->
+          <section class="card attempt-summary">
             <div class="summary-item">
               <span class="summary-label">Total Attempts</span>
               <strong id="total-attempts">-</strong>
@@ -97,14 +103,13 @@
             </div>
           </section>
 
-          <!-- Attempts -->
+          <!-- Submission Attempts -->
           <section class="card card-flush">
             <div class="card-header">
               <h2>Submission Attempts</h2>
               <p>Review the feedback from each submission. Newest is first.</p>
             </div>
 
-            <!-- Each attempt is added here by script.js -->
             <div id="attempt-list"></div>
           </section>
         </div>

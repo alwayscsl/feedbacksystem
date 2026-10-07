@@ -21,35 +21,35 @@
       <div class="logo">Feedback System</div>
     </header>
 
-    <!-- Application Layout -->
+    <!-- Main Layout -->
     <div class="app-layout">
       <!-- Sidebar -->
       <aside class="sidebar">
-        <nav class="nav-menu" aria-label="Main navigation">
+        <nav class="nav-menu">
           <a href="assignments.html" class="nav-item active">
-            <i class="fa-regular fa-clipboard" aria-hidden="true"></i>
+            <i class="fa-regular fa-clipboard"></i>
             <span>Assignments</span>
           </a>
 
           <a href="profile.html" class="nav-item">
-            <i class="fa-regular fa-user" aria-hidden="true"></i>
+            <i class="fa-regular fa-user"></i>
             <span>Profile</span>
           </a>
 
           <a href="account-settings.html" class="nav-item">
-            <i class="fa-solid fa-gear" aria-hidden="true"></i>
+            <i class="fa-solid fa-gear"></i>
             <span>Settings</span>
           </a>
 
           <a href="help.html" class="nav-item">
-            <i class="fa-regular fa-circle-question" aria-hidden="true"></i>
+            <i class="fa-regular fa-circle-question"></i>
             <span>Help</span>
           </a>
         </nav>
 
         <div class="sidebar-bottom">
           <a href="index.html" class="nav-item">
-            <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>
+            <i class="fa-solid fa-right-from-bracket"></i>
             <span>Logout</span>
           </a>
         </div>
@@ -58,11 +58,13 @@
       <!-- Main Content -->
       <main class="main-content">
         <div class="content content-narrow">
+          <!-- Back Link -->
           <a id="back-link" href="attempts.html" class="back-link">
-            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            <i class="fa-solid fa-arrow-left"></i>
             Back to Attempts
           </a>
 
+          <!-- Page Heading -->
           <div class="page-heading">
             <div>
               <h1 id="upload-title">Upload Assignment</h1>
@@ -71,14 +73,14 @@
           </div>
 
           <!-- Upload Card -->
-          <section class="card" aria-labelledby="upload-title">
+          <section class="card">
             <p class="upload-description">
               Select the ZIP file you want to submit. The file name must match
               exactly, including spaces and capital letters.
             </p>
 
             <div class="callout callout-info">
-              <i class="fa-solid fa-file-zipper" aria-hidden="true"></i>
+              <i class="fa-solid fa-file-zipper"></i>
 
               <div>
                 <strong>Required file name</strong>
@@ -86,8 +88,14 @@
               </div>
             </div>
 
-            <form id="upload-form" action="#" method="post" enctype="multipart/form-data" novalidate>
-              <!-- Input comes first so the dashed box can show keyboard focus -->
+            <form
+              id="upload-form"
+              action="#"
+              method="post"
+              enctype="multipart/form-data"
+              novalidate
+            >
+              <!-- File Upload -->
               <input
                 type="file"
                 id="assignment-file"
@@ -98,20 +106,72 @@
               />
 
               <label for="assignment-file" class="upload-area">
-                <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+
                 <strong>Choose a file to upload</strong>
-                <span>Click here to browse your computer. ZIP files only.</span>
+
+                <span>
+                  Click here to browse your computer. ZIP files only, up to 25
+                  MB.
+                </span>
               </label>
 
               <p id="selected-file" class="selected-file" hidden></p>
 
-              <div class="form-actions">
-                <a id="cancel-link" href="attempts.html" class="btn btn-outline">Cancel</a>
+              <!-- Upload Progress -->
+              <div id="upload-progress" class="upload-progress" hidden>
+                <div class="upload-progress-label">
+                  <span id="upload-progress-text"> Uploading... </span>
 
-                <button type="submit" class="btn btn-primary">Submit Assignment</button>
+                  <span id="upload-progress-percent"> 0% </span>
+                </div>
+
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuenow="0"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div
+                    id="upload-progress-fill"
+                    class="progress-fill"
+                    style="width: 0%"
+                  ></div>
+                </div>
+
+                <p class="form-hint">
+                  Please keep this page open until the upload finishes.
+                </p>
               </div>
 
-              <p id="upload-message" class="form-message" role="status" hidden></p>
+              <!-- Submission Results -->
+              <div id="submission-result" class="submission-result" hidden>
+                <h2 id="result-heading" tabindex="-1">Submission Results</h2>
+
+                <div id="result-details"></div>
+              </div>
+
+              <!-- Form Buttons -->
+              <div class="form-actions">
+                <a
+                  id="cancel-link"
+                  href="attempts.html"
+                  class="btn btn-outline"
+                >
+                  Cancel
+                </a>
+
+                <button
+                  id="submit-button"
+                  type="submit"
+                  class="btn btn-primary"
+                >
+                  Submit Assignment
+                </button>
+              </div>
+
+              <p id="upload-message" class="form-message" hidden></p>
             </form>
           </section>
         </div>
