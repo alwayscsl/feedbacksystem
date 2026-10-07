@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Feedback System - Login</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="login-page">
+    <!-- Header -->
+    <header class="header-bar">
+      <div class="logo">Feedback System</div>
+    </header>
+
+    <!-- Login -->
+    <main class="login-container">
+      <!-- Image (decorative) -->
+      <div class="image-section">
+        <img src="desk_girl1.png" alt="" />
+      </div>
+
+      <!-- Form Section -->
+      <section class="login-section">
+        <div class="login-content">
+          <div class="welcome-header">
+            <h1>Welcome!</h1>
+            <p>Enter your credentials to continue.</p>
+          </div>
+
+          <div class="card login-card">
+            <form id="login-form" action="assignments.html" method="post">
+              <div class="form-group">
+                <label for="email">Email</label>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="password">Password</label>
+
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Enter your password"
+                  autocomplete="current-password"
+                  required
+                />
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">Log In</button>
+
+              <p id="login-message" class="form-message" role="status" hidden></p>
+
+              <div class="form-link">
+                <a href="forgot-password.html">Forgot password?</a>
+              </div>
+            </form>
+
+            <!-- Create Account -->
+            <div class="signup-prompt">
+              <p>New user? Create an account to get started.</p>
+
+              <a href="create-account.html" class="btn btn-outline btn-block">
+                Create New Account
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-bar">
+      <p>&copy; 2026 Feedback System &middot; Northcentral Technical College</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

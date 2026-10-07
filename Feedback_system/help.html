@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Feedback System - Help</title>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header-bar">
+      <div class="logo">Feedback System</div>
+    </header>
+
+    <!-- Application Layout -->
+    <div class="app-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <nav class="nav-menu" aria-label="Main navigation">
+          <a href="assignments.html" class="nav-item">
+            <i class="fa-regular fa-clipboard" aria-hidden="true"></i>
+            <span>Assignments</span>
+          </a>
+
+          <a href="profile.html" class="nav-item">
+            <i class="fa-regular fa-user" aria-hidden="true"></i>
+            <span>Profile</span>
+          </a>
+
+          <a href="account-settings.html" class="nav-item">
+            <i class="fa-solid fa-gear" aria-hidden="true"></i>
+            <span>Settings</span>
+          </a>
+
+          <a href="help.html" class="nav-item active" aria-current="page">
+            <i class="fa-regular fa-circle-question" aria-hidden="true"></i>
+            <span>Help</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <a href="index.html" class="nav-item">
+            <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>
+            <span>Logout</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="content">
+          <div class="page-heading">
+            <div>
+              <h1>Help &amp; Support</h1>
+              <p>
+                Find helpful information about courses, assignments, feedback,
+                and getting support.
+              </p>
+            </div>
+          </div>
+
+          <!-- Course Registration -->
+          <section class="card">
+            <div class="help-card-header">
+              <div class="icon-box">
+                <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+              </div>
+
+              <div>
+                <h2>Course Registration</h2>
+                <p>Need help registering for your courses? Follow the steps below.</p>
+              </div>
+            </div>
+
+            <div class="help-steps">
+              <div class="help-step">
+                <div class="step-number">1</div>
+
+                <div class="step-content">
+                  <h3>Find Your Course</h3>
+                  <p>
+                    Go to your school's website and open the course page for
+                    the course you want to register for.
+                  </p>
+                </div>
+              </div>
+
+              <div class="help-step">
+                <div class="step-number">2</div>
+
+                <div class="step-content">
+                  <h3>Find the Registration Link</h3>
+                  <p>
+                    Your course's registration link is usually in the syllabus
+                    or the syllabus quiz from your instructor.
+                  </p>
+                </div>
+              </div>
+
+              <div class="help-step">
+                <div class="step-number">3</div>
+
+                <div class="step-content">
+                  <h3>Register for the Course</h3>
+                  <p>
+                    Click the registration link or paste it into your browser.
+                    You may need to log in before registering.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Submitting Assignments -->
+          <section class="card">
+            <div class="help-card-header">
+              <div class="icon-box">
+                <i class="fa-solid fa-upload" aria-hidden="true"></i>
+              </div>
+
+              <div>
+                <h2>Submitting Assignments</h2>
+                <p>Follow these steps to submit an assignment through Feedback System.</p>
+              </div>
+            </div>
+
+            <div class="help-steps">
+              <div class="help-step">
+                <div class="step-number">1</div>
+
+                <div class="step-content">
+                  <h3>Open the Assignments Page</h3>
+                  <p>
+                    Go to the <a href="assignments.html">Assignments</a> page to
+                    see the assignments for each class you are enrolled in.
+                  </p>
+                </div>
+              </div>
+
+              <div class="help-step">
+                <div class="step-number">2</div>
+
+                <div class="step-content">
+                  <h3>Select Your Course</h3>
+                  <p>Choose your course from the Course dropdown on that page.</p>
+                </div>
+              </div>
+
+              <div class="help-step">
+                <div class="step-number">3</div>
+
+                <div class="step-content">
+                  <h3>Upload Your Assignment</h3>
+                  <p>
+                    Click <strong>Upload</strong> next to the assignment, then
+                    choose your ZIP file and click <strong>Submit Assignment</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Feedback Results -->
+          <section class="card">
+            <div class="help-card-header">
+              <div class="icon-box">
+                <i class="fa-solid fa-clipboard-check" aria-hidden="true"></i>
+              </div>
+
+              <div>
+                <h2>Feedback Results</h2>
+                <p>Learn how Feedback System checks your assignment.</p>
+              </div>
+            </div>
+
+            <div class="help-info">
+              <p>
+                When you submit an assignment, it is compared to the correct
+                code for that assignment. Steps you completed correctly show a
+                success status. Steps that don't match the expected code show
+                an error.
+              </p>
+
+              <div class="callout callout-warning">
+                <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+
+                <div>
+                  <strong>Check your file name</strong>
+                  <p>
+                    Your ZIP file must be named exactly as shown on the Upload
+                    page, or your submission will fail.
+                  </p>
+                </div>
+              </div>
+
+              <div class="callout callout-success">
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+
+                <div>
+                  <strong>You can resubmit!</strong>
+                  <p>Submit as many times as you like until every step shows success.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Slack -->
+          <section class="card">
+            <div class="help-card-header">
+              <div class="icon-box">
+                <i class="fa-brands fa-slack" aria-hidden="true"></i>
+              </div>
+
+              <div>
+                <h2>Slack Channel</h2>
+                <p>Need more help with your assignments?</p>
+              </div>
+            </div>
+
+            <div class="help-info">
+              <p>
+                Tutors in the ITEC Slack channel help students in Feedback
+                System courses. Join the channel and message a tutor,
+                instructor assistant, or instructor.
+              </p>
+
+              <a
+                href="https://ntcitec.slack.com/"
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa-brands fa-slack" aria-hidden="true"></i>
+                Join ITEC Slack Channel
+              </a>
+            </div>
+          </section>
+
+          <!-- StyleCop -->
+          <section class="card">
+            <div class="help-card-header">
+              <div class="icon-box">
+                <i class="fa-solid fa-code" aria-hidden="true"></i>
+              </div>
+
+              <div>
+                <h2>StyleCop Help</h2>
+                <p>Learn how StyleCop helps with code submissions.</p>
+              </div>
+            </div>
+
+            <div class="help-info">
+              <p>
+                Feedback System is sensitive to certain code errors. StyleCop
+                helps you find and fix them before you submit, so you get
+                fewer repeated error messages.
+              </p>
+
+              <a
+                href="https://check.ntc.edu/17e48d850a75"
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa-solid fa-book" aria-hidden="true"></i>
+                View StyleCop Guide
+              </a>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-bar">
+      <p>&copy; 2026 Feedback System &middot; Northcentral Technical College</p>
+    </footer>
+  </body>
+</html>

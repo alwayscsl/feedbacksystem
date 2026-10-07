@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Feedback System - Account Settings</title>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header-bar">
+      <div class="logo">Feedback System</div>
+    </header>
+
+    <!-- Application Layout -->
+    <div class="app-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <nav class="nav-menu" aria-label="Main navigation">
+          <a href="assignments.html" class="nav-item">
+            <i class="fa-regular fa-clipboard" aria-hidden="true"></i>
+            <span>Assignments</span>
+          </a>
+
+          <a href="profile.html" class="nav-item">
+            <i class="fa-regular fa-user" aria-hidden="true"></i>
+            <span>Profile</span>
+          </a>
+
+          <a href="account-settings.html" class="nav-item active" aria-current="page">
+            <i class="fa-solid fa-gear" aria-hidden="true"></i>
+            <span>Settings</span>
+          </a>
+
+          <a href="help.html" class="nav-item">
+            <i class="fa-regular fa-circle-question" aria-hidden="true"></i>
+            <span>Help</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <a href="index.html" class="nav-item">
+            <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>
+            <span>Logout</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="content content-narrow">
+          <div class="page-heading">
+            <div>
+              <h1>Account Settings</h1>
+              <p>Update your personal information and password.</p>
+            </div>
+          </div>
+
+          <!-- Update Information -->
+          <section id="update-information" class="card">
+            <div class="help-card-header">
+              <div class="icon-box">
+                <i class="fa-regular fa-pen-to-square" aria-hidden="true"></i>
+              </div>
+
+              <div>
+                <h2>Update Information</h2>
+                <p>Change your name, email, or student information.</p>
+              </div>
+            </div>
+
+            <form id="info-form" action="#" method="post">
+              <!-- First and last name side by side -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first-name">First Name</label>
+
+                  <input
+                    type="text"
+                    id="first-name"
+                    name="first-name"
+                    value="Chia"
+                    autocomplete="given-name"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="last-name">Last Name</label>
+
+                  <input
+                    type="text"
+                    id="last-name"
+                    name="last-name"
+                    value="Lee"
+                    autocomplete="family-name"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value="clee@student.ntc.edu"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="student-id">Student ID</label>
+
+                <input
+                  type="text"
+                  id="student-id"
+                  name="student-id"
+                  value="12345678"
+                  inputmode="numeric"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+
+              <div class="form-actions">
+                <button type="reset" class="btn btn-outline">Cancel</button>
+
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+              </div>
+
+              <p id="info-message" class="form-message" role="status" hidden></p>
+            </form>
+          </section>
+
+          <!-- Change Password -->
+          <section id="change-password" class="card">
+            <div class="help-card-header">
+              <div class="icon-box">
+                <i class="fa-solid fa-lock" aria-hidden="true"></i>
+              </div>
+
+              <div>
+                <h2>Change Password</h2>
+                <p>Update your account password.</p>
+              </div>
+            </div>
+
+            <form id="password-form" action="#" method="post">
+              <div class="form-group">
+                <label for="current-password">Current Password</label>
+
+                <input
+                  type="password"
+                  id="current-password"
+                  name="current-password"
+                  autocomplete="current-password"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="new-password">New Password</label>
+
+                <input
+                  type="password"
+                  id="new-password"
+                  name="new-password"
+                  autocomplete="new-password"
+                  minlength="8"
+                  aria-describedby="new-password-hint"
+                  required
+                />
+
+                <p id="new-password-hint" class="form-hint">Use at least 8 characters.</p>
+              </div>
+
+              <div class="form-group">
+                <label for="confirm-password">Confirm New Password</label>
+
+                <input
+                  type="password"
+                  id="confirm-password"
+                  name="confirm-password"
+                  autocomplete="new-password"
+                  required
+                />
+              </div>
+
+              <div class="form-actions">
+                <button type="reset" class="btn btn-outline">Cancel</button>
+
+                <button type="submit" class="btn btn-primary">Update Password</button>
+              </div>
+
+              <p id="password-message" class="form-message" role="status" hidden></p>
+            </form>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-bar">
+      <p>&copy; 2026 Feedback System &middot; Northcentral Technical College</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

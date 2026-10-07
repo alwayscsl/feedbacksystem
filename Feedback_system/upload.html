@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Feedback System - Upload Assignment</title>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header-bar">
+      <div class="logo">Feedback System</div>
+    </header>
+
+    <!-- Application Layout -->
+    <div class="app-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <nav class="nav-menu" aria-label="Main navigation">
+          <a href="assignments.html" class="nav-item active">
+            <i class="fa-regular fa-clipboard" aria-hidden="true"></i>
+            <span>Assignments</span>
+          </a>
+
+          <a href="profile.html" class="nav-item">
+            <i class="fa-regular fa-user" aria-hidden="true"></i>
+            <span>Profile</span>
+          </a>
+
+          <a href="account-settings.html" class="nav-item">
+            <i class="fa-solid fa-gear" aria-hidden="true"></i>
+            <span>Settings</span>
+          </a>
+
+          <a href="help.html" class="nav-item">
+            <i class="fa-regular fa-circle-question" aria-hidden="true"></i>
+            <span>Help</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <a href="index.html" class="nav-item">
+            <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>
+            <span>Logout</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="content content-narrow">
+          <a id="back-link" href="attempts.html" class="back-link">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            Back to Attempts
+          </a>
+
+          <div class="page-heading">
+            <div>
+              <h1 id="upload-title">Upload Assignment</h1>
+              <p>Upload your file to submit your assignment.</p>
+            </div>
+          </div>
+
+          <!-- Upload Card -->
+          <section class="card" aria-labelledby="upload-title">
+            <p class="upload-description">
+              Select the ZIP file you want to submit. The file name must match
+              exactly, including spaces and capital letters.
+            </p>
+
+            <div class="callout callout-info">
+              <i class="fa-solid fa-file-zipper" aria-hidden="true"></i>
+
+              <div>
+                <strong>Required file name</strong>
+                <p id="required-name">Zoo 1A Lee.zip</p>
+              </div>
+            </div>
+
+            <form id="upload-form" action="#" method="post" enctype="multipart/form-data" novalidate>
+              <!-- Input comes first so the dashed box can show keyboard focus -->
+              <input
+                type="file"
+                id="assignment-file"
+                name="assignment-file"
+                class="file-input"
+                accept=".zip"
+                required
+              />
+
+              <label for="assignment-file" class="upload-area">
+                <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
+                <strong>Choose a file to upload</strong>
+                <span>Click here to browse your computer. ZIP files only.</span>
+              </label>
+
+              <p id="selected-file" class="selected-file" hidden></p>
+
+              <div class="form-actions">
+                <a id="cancel-link" href="attempts.html" class="btn btn-outline">Cancel</a>
+
+                <button type="submit" class="btn btn-primary">Submit Assignment</button>
+              </div>
+
+              <p id="upload-message" class="form-message" role="status" hidden></p>
+            </form>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-bar">
+      <p>&copy; 2026 Feedback System &middot; Northcentral Technical College</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Feedback System - Assignments</title>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header-bar">
+      <div class="logo">Feedback System</div>
+    </header>
+
+    <!-- Application Layout -->
+    <div class="app-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <nav class="nav-menu" aria-label="Main navigation">
+          <a href="assignments.html" class="nav-item active" aria-current="page">
+            <i class="fa-regular fa-clipboard" aria-hidden="true"></i>
+            <span>Assignments</span>
+          </a>
+
+          <a href="profile.html" class="nav-item">
+            <i class="fa-regular fa-user" aria-hidden="true"></i>
+            <span>Profile</span>
+          </a>
+
+          <a href="account-settings.html" class="nav-item">
+            <i class="fa-solid fa-gear" aria-hidden="true"></i>
+            <span>Settings</span>
+          </a>
+
+          <a href="help.html" class="nav-item">
+            <i class="fa-regular fa-circle-question" aria-hidden="true"></i>
+            <span>Help</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <a href="index.html" class="nav-item">
+            <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>
+            <span>Logout</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="content">
+          <div class="page-heading">
+            <div>
+              <h1>Assignments</h1>
+              <p>View your assignments, submission status, and feedback.</p>
+            </div>
+
+            <span id="assignment-count" class="badge badge-info">4 Assignments</span>
+          </div>
+
+          <!-- Important Information -->
+          <section class="card info-card">
+            <div class="info-heading">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+              <h2>Important Information</h2>
+            </div>
+
+            <p>
+              This is an unofficial grade and is not your final grade. Your
+              submission will be reviewed in Canvas.
+            </p>
+
+            <p>
+              You can resubmit as many times as needed before the due date to
+              receive full credit.
+            </p>
+          </section>
+
+          <!-- Status Guide -->
+          <section class="card">
+            <h2>Submission Status</h2>
+
+            <div class="legend-grid">
+              <div class="legend-item">
+                <i class="fa-solid fa-circle-check icon-success" aria-hidden="true"></i>
+                <span>Submitted - No Errors</span>
+              </div>
+
+              <div class="legend-item">
+                <i class="fa-solid fa-circle-exclamation icon-warning" aria-hidden="true"></i>
+                <span>Needs Attention - Warnings or Errors</span>
+              </div>
+
+              <div class="legend-item">
+                <i class="fa-solid fa-triangle-exclamation icon-danger" aria-hidden="true"></i>
+                <span>Something Went Wrong</span>
+              </div>
+
+              <div class="legend-item">
+                <i class="fa-solid fa-circle-xmark icon-muted" aria-hidden="true"></i>
+                <span>Not Submitted</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Course Selection -->
+          <section class="card">
+            <label for="course-select" class="field-label">Course</label>
+
+            <div class="select-wrapper">
+              <select id="course-select" class="course-dropdown">
+                <option value="oop">Fall 2026 - Object Oriented Programming</option>
+                <option value="web">Fall 2026 - Web Development</option>
+                <option value="database">Spring 2027 - Database Systems</option>
+              </select>
+
+              <i class="fa-solid fa-chevron-down dropdown-arrow" aria-hidden="true"></i>
+            </div>
+          </section>
+
+          <!-- Assignments Table -->
+          <section class="card card-flush">
+            <div class="card-header">
+              <h2>Your Assignments</h2>
+              <p>Select an assignment to view attempts or submit work.</p>
+            </div>
+
+            <div class="table-wrapper">
+              <table class="assignment-table">
+                <thead>
+                  <tr>
+                    <th scope="col" class="col-name">Assignment</th>
+                    <th scope="col" class="col-status">Status</th>
+                    <th scope="col" class="col-date">Due Date</th>
+                    <th scope="col" class="col-actions">Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody id="assignment-rows">
+                  <!-- Zoo 1A -->
+                  <tr data-course="oop">
+                    <td>
+                      <a href="attempts.html?assignment=zoo1a" class="assignment-link">Zoo 1A</a>
+                    </td>
+
+                    <td>
+                      <span class="status-label">
+                        <i class="fa-solid fa-circle-exclamation icon-warning" aria-hidden="true"></i>
+                        Needs Attention
+                      </span>
+                    </td>
+
+                    <td>September 30, 2026</td>
+
+                    <td>
+                      <div class="btn-group">
+                        <a href="attempts.html?assignment=zoo1a" class="btn btn-outline">Attempts</a>
+                        <a href="upload.html?assignment=zoo1a" class="btn btn-primary">Upload</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Zoo 1B -->
+                  <tr data-course="oop">
+                    <td>
+                      <a href="attempts.html?assignment=zoo1b" class="assignment-link">Zoo 1B</a>
+                    </td>
+
+                    <td>
+                      <span class="status-label">
+                        <i class="fa-solid fa-circle-check icon-success" aria-hidden="true"></i>
+                        Submitted
+                      </span>
+                    </td>
+
+                    <td>September 30, 2026</td>
+
+                    <td>
+                      <div class="btn-group">
+                        <a href="attempts.html?assignment=zoo1b" class="btn btn-outline">Attempts</a>
+                        <a href="upload.html?assignment=zoo1b" class="btn btn-primary">Upload</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Zoo 1C -->
+                  <tr data-course="oop">
+                    <td>
+                      <a href="attempts.html?assignment=zoo1c" class="assignment-link">Zoo 1C</a>
+                    </td>
+
+                    <td>
+                      <span class="status-label">
+                        <i class="fa-solid fa-circle-check icon-success" aria-hidden="true"></i>
+                        Submitted
+                      </span>
+                    </td>
+
+                    <td>September 30, 2026</td>
+
+                    <td>
+                      <div class="btn-group">
+                        <a href="attempts.html?assignment=zoo1c" class="btn btn-outline">Attempts</a>
+                        <a href="upload.html?assignment=zoo1c" class="btn btn-primary">Upload</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Zoo 2A -->
+                  <tr data-course="oop">
+                    <td>
+                      <a href="attempts.html?assignment=zoo2a" class="assignment-link">Zoo 2A</a>
+                    </td>
+
+                    <td>
+                      <span class="status-label">
+                        <i class="fa-solid fa-circle-check icon-success" aria-hidden="true"></i>
+                        Submitted
+                      </span>
+                    </td>
+
+                    <td>September 30, 2026</td>
+
+                    <td>
+                      <div class="btn-group">
+                        <a href="attempts.html?assignment=zoo2a" class="btn btn-outline">Attempts</a>
+                        <a href="upload.html?assignment=zoo2a" class="btn btn-primary">Upload</a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Shown when the selected course has no assignments -->
+                  <tr id="no-assignments" class="empty-row" hidden>
+                    <td colspan="4">No assignments have been posted for this course yet.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-bar">
+      <p>&copy; 2026 Feedback System &middot; Northcentral Technical College</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
