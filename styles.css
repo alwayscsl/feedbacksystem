@@ -582,7 +582,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   10. LOGIN PAGES
+   LOGIN / CREATE ACCOUNT
    ========================================================= */
 
 .login-page {
@@ -594,11 +594,14 @@ button:focus-visible {
 .login-container {
   display: flex;
   flex: 1;
+  min-height: 0;
 }
 
+/* Image */
 .image-section {
   width: 50%;
   background-color: #f5f5f5;
+  overflow: hidden;
 }
 
 .image-section img {
@@ -609,16 +612,18 @@ button:focus-visible {
   object-position: center;
 }
 
+/* Form */
 .login-section {
   width: 50%;
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 40px;
 }
 
 .login-content {
   width: 100%;
   max-width: 420px;
-  margin: auto;
 }
 
 .welcome-header {
@@ -654,7 +659,6 @@ button:focus-visible {
   color: var(--text-muted);
   font-size: 0.875rem;
 }
-
 
 /* =========================================================
    11. ASSIGNMENTS PAGE
@@ -1217,17 +1221,27 @@ button:focus-visible {
     padding: 32px 16px;
   }
 
+  /* App Layout */
   .app-layout {
     flex-direction: column;
   }
 
+  /* Main content comes first */
+  .main-content {
+    order: 1;
+    padding: 24px 16px;
+  }
+
+  /* Sidebar moves to the bottom */
   .sidebar {
+    order: 2;
     width: 100%;
     flex-direction: row;
     gap: 4px;
     padding: 8px;
     border-right: none;
-    border-bottom: 1px solid var(--border);
+    border-top: 1px solid var(--border);
+    border-bottom: none;
   }
 
   .nav-menu {
@@ -1248,10 +1262,6 @@ button:focus-visible {
     padding: 8px 4px;
     font-size: 0.75rem;
     text-align: center;
-  }
-
-  .main-content {
-    padding: 24px 16px;
   }
 
   .page-heading h1 {
