@@ -586,7 +586,9 @@ button:focus-visible {
    ========================================================= */
 
 .login-page {
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .login-container {
@@ -598,7 +600,7 @@ button:focus-visible {
 .image-section {
   width: 50%;
   overflow: hidden;
-  background-color: var(--hover);
+  background-color: #f5f5f5;
 }
 
 .image-section img {
